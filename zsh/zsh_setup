@@ -1,0 +1,16 @@
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/wting/autojump.git ~/.oh-my-zsh/custom/plugins/autojump
+
+ln -s $(realpath zshrc) ~/.zshrc
+
+
+
+Grab a copy of autojump:
+
+  git clone https://github.com/wting/autojump.git /tmp/autojump
+
+Run the installation script and follow on screen instructions.
+
+  cd autojump
+  ./install.py or ./uninstall.py

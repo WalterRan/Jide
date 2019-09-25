@@ -1,0 +1,56 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent off
+
+nmap <leader>1 :buffer 1<CR>
+nmap <leader>2 :buffer 2<CR>
+nmap <leader>3 :buffer 3<CR>
+nmap <leader>4 :buffer 4<CR>
+nmap <leader>5 :buffer 5<CR>
+nmap <leader>6 :buffer 6<CR>
+nmap <leader>7 :buffer 7<CR>
+nmap <leader>8 :buffer 8<CR>
+nmap <leader>9 :buffer 9<CR>
+
+
+" -------- nerd tree --------
+map <C-n> :NERDTreeToggle<CR>
+" let NERDTreeWinPos="right" " 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）
+
+
+" -------- tagbar --------
+nmap <F8> :TagbarToggle<CR> "让tagbar在页面左侧显示，默认右边
+" let g:tagbar_left = 1
+
+set cursorcolumn " Highlight the screen column of the cursor with CursorColumn
+set cursorline " Highlight the screen line of the cursor with CursorLine
+set number " 默认显示行号
+set tabstop=4 " Number of spaces that a <Tab> in the file counts for
+set expandtab " Use the appropriate number of spaces to insert a <Tab>
+set incsearch " While typing a search command, show where the pattern, as it was typed so far, matches
+set hlsearch " When there is a previous search pattern, highlight all its matches.
+set showmatch " When a bracket is inserted, briefly jump to the matching one
+set matchtime=5 " Tenths of a second to show the matching paren
+set nowrap " 设置不自动折行
+set nowrapscan " 设置不循环查找
+set ambiwidth=double "设置为双字宽显示，否则无法完整显示如:☆
+
+" -------- theme --------
+" set background=dark
+set t_Co=256
+colorscheme molokai " 修改vim配色方案
+
+
+" -------- air-line config --------
+let g:airline#extensions#tabline#enabled = 1 " Enable enhanced tabline
+let g:airline#extensions#tabline#buffer_nr_show = 1 " Enable buffer numbers show
+let g:airline_powerline_fonts = 1 " Enable powerline symbols
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]' " Disable the fileformat output
+let g:airline#extensions#wordcount#enabled = 0 " Disable word counting of the document/visual selection
+let g:airline#extensions#whitespace#enabled = 0 " Disable detection of whitespace errors
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
