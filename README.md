@@ -12,3 +12,9 @@ git submodule add https://github.com/majutsushi/tagbar.git vim/bundle/tagbar
 git submodule add https://github.com/vim-airline/vim-airline.git vim/bundle/vim-airline
 git submodule add https://github.com/nathanalderson/yang.vim.git vim/bundle/vim-yang
 git submodule add https://github.com/tpope/vim-pathogen.git vim/vim-pathogen
+
+* zsh
+** Submodules
+git submodule add https://github.com/zsh-users/zsh-syntax-highlighting zsh/zsh-syntax-highlighting
+git submodule add https://github.com/zsh-users/zsh-autosuggestions zsh/zsh-autosuggestions
+git submodule add https://github.com/wting/autojump.git zsh/autojump
