@@ -1,0 +1,18 @@
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/bundle/vim-yang"]
+	path = vim/bundle/vim-yang
+	url = https://github.com/nathanalderson/yang.vim.git
