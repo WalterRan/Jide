@@ -7,8 +7,8 @@ git submodule update
 
 rm ~/.oh-my-zsh -rf
 
-curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-sh install.sh
+curl -Lo /tmp/install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+sh /tmp/install.sh
 
 rm ~/.zshrc -rf
 
