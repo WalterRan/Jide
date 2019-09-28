@@ -18,4 +18,5 @@ make
 
 make install
 
-popd
+rm ~/.emacs.d
+ln -sf `pwd`/emacs ~/.emacs.d
