@@ -19,4 +19,4 @@ make
 make install
 
 rm ~/.emacs.d
-ln -sf `pwd`/emacs ~/.emacs.d
+cp -ri ./emacs ~/.emacs.d
