@@ -1,8 +1,8 @@
 #!/bin/sh
 
-yum -y install libXpm-devel libjpeg-turbo-devel openjpeg-devel openjpeg2-devel turbojpeg-devel giflib-devel libtiff-devel gnutls-devel libxml2-devel GConf2-devel dbus-devel wxGTK-devel gtk3-devel libselinux-devel gpm-devel librsvg2-devel ImageMagick-devel libncurses-dev ncurses-devel gcc
+current_path=$(pwd)
 
-pushd
+yum -y install libXpm-devel libjpeg-turbo-devel openjpeg-devel openjpeg2-devel turbojpeg-devel giflib-devel libtiff-devel gnutls-devel libxml2-devel GConf2-devel dbus-devel wxGTK-devel gtk3-devel libselinux-devel gpm-devel librsvg2-devel ImageMagick-devel libncurses-dev ncurses-devel gcc
 
 cd /tmp
 
@@ -18,5 +18,7 @@ make
 
 make install
 
-rm ~/.emacs.d
+rm -rf ~/.emacs.d
+
+cd $current_path
 cp -ri ./emacs ~/.emacs.d
