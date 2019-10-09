@@ -94,9 +94,9 @@ case "$1" in
         ;;
 
     all)
-        install_zsh
         install_vim
         install_emacs
+        install_zsh
         ;;
 
     *)
