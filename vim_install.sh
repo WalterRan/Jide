@@ -5,17 +5,16 @@ yum install vim -y
 git submodule init
 git submodule update
 
-rm -rf ~/.vim
-rm -rf ~/.vimrc
+rm -rf ~/.vim*
 
 mkdir -p ~/.vim
 mkdir -p ~/.vim/autoload
 
-
-ln -sf `pwd`/vim/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
-ln -sf `pwd`/vim/bundle ~/.vim/bundle
-ln -sf `pwd`/vim/after ~/.vim/after
-ln -sf `pwd`/vim/plugin ~/.vim/plugin
-ln -sf `pwd`/vim/vimrc ~/.vimrc
+# Replace 'ln -sf' by 'cp -ri'
+cp -ri `pwd`/vim/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
+cp -ri `pwd`/vim/bundle ~/.vim/bundle
+cp -ri `pwd`/vim/after ~/.vim/after
+cp -ri `pwd`/vim/plugin ~/.vim/plugin
+cp -ri `pwd`/vim/vimrc ~/.vimrc
 
 
