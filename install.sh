@@ -72,6 +72,7 @@ install_zsh() {
     cp -ri `pwd`/zsh/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     cp -ri `pwd`/zsh/autojump ~/.oh-my-zsh/custom/plugins/autojump
 
+    rm -rf ~/.zshrc
     cp -ri $(realpath zsh/zshrc) ~/.zshrc
 
     cd zsh/autojump
