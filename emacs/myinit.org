@@ -22,33 +22,12 @@
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
 
-;; company: A text completion framework
-(use-package company
-  :init
-  (global-company-mode 1)
-  (delete 'company-semantic company-backends))
-;; (define-key c-mode-map  [(control tab)] 'company-complete)
-;; (define-key c++-mode-map  [(control tab)] 'company-complete)
-
-;; Projectile is a project interaction library for Emacs
-(use-package projectile
-  :init
-  (projectile-global-mode)
-  (setq projectile-enable-caching t))
-
-;; zygospore lets you revert C-x 1 (delete-other-window) by pressing C-x 1 again
-(use-package zygospore
-  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
-         ("RET" .   newline-and-indent)))
-
 ;; automatically indent when press RET
 (global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
-#+END_SRC
-* Global configuration
-#+BEGIN_SRC emacs-lisp
+
 ;; Press F11 to fullscreen
 (defun fullscreen ()
   (interactive)
@@ -64,6 +43,31 @@
 
 ;; Always show line numbers
 (global-linum-mode 1)
+#+END_SRC
+* company
+#+BEGIN_SRC emacs-lisp
+;; company: A text completion framework
+(use-package company
+  :init
+  (global-company-mode 1)
+  (delete 'company-semantic company-backends))
+;; (define-key c-mode-map  [(control tab)] 'company-complete)
+;; (define-key c++-mode-map  [(control tab)] 'company-complete)
+#+END_SRC
+* projectile
+#+BEGIN_SRC emacs-lisp
+;; Projectile is a project interaction library for Emacs
+(use-package projectile
+  :init
+  (projectile-global-mode)
+  (setq projectile-enable-caching t))
+#+END_SRC
+* zygospore
+#+BEGIN_SRC emacs-lisp
+;; zygospore lets you revert C-x 1 (delete-other-window) by pressing C-x 1 again
+(use-package zygospore
+  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
+         ("RET" .   newline-and-indent)))
 #+END_SRC
 * swiper
 #+BEGIN_SRC emacs-lisp
