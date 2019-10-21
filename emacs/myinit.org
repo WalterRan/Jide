@@ -61,6 +61,33 @@
   :init
   (projectile-global-mode)
   (setq projectile-enable-caching t)
+  (setq projectile-globally-ignored-directories
+    (append '(
+        ".git"
+        ".svn"
+        "out"
+        "repl"
+        "target"
+        "venv"
+        )
+      projectile-globally-ignored-directories))
+  (setq projectile-globally-ignored-files
+    (append '(
+        "*.gz"
+        "*.pyc"
+        "*.jar"
+        "*.tar.gz"
+        "*.tgz"
+        "*.zip"
+        "*.o"
+        "*.rpm"
+        "*.iso"
+        "GTAGS"
+        "GPATH"
+        "GRTAGS"
+        "*.swp"
+       )
+        projectile-globally-ignored-files))
   (global-set-key [f5] 'projectile-find-file)
 )
 #+END_SRC
