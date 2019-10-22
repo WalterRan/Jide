@@ -272,11 +272,6 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
-;; Package: volatile-highlights
-;; GROUP: Editing -> Volatile Highlights
-(use-package volatile-highlights
-  :init
-  (volatile-highlights-mode t))
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
@@ -504,6 +499,14 @@ Position the cursor at it's beginning, according to the current mode."
   :ensure t
   )
 #+END_SRC
+* highlight
+#+BEGIN_SRC emacs-lisp
+(require 'highlight-symbol)
+(global-set-key [(control f8)] 'highlight-symbol)
+(global-set-key [f8] 'highlight-symbol-next)
+(global-set-key [(shift f8)] 'highlight-symbol-prev)
+(global-set-key [(meta f8)] 'highlight-symbol-query-replace)
+#+END_SRC
 * unused
 #+BEGIN_SRC emacs-lisp
 ;; Compilation
@@ -514,4 +517,11 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; 用S-<up>、S-<right>跳转到上面、右边的窗口
 ;; (windmove-default-keybindings)
+
+;; Package: volatile-highlights
+;; GROUP: Editing -> Volatile Highlights
+;; (use-package volatile-highlights
+;;   :init
+;;   (volatile-highlights-mode t))
+
 #+END_SRC
