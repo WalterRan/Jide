@@ -510,6 +510,16 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key [(shift f8)] 'highlight-symbol-prev)
 (global-set-key [(meta f8)] 'highlight-symbol-query-replace)
 #+END_SRC
+* centaur-tabs
+#+BEGIN_SRC emacs-lisp
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
+#+END_SRC
 * unused
 #+BEGIN_SRC emacs-lisp
 ;; Compilation
