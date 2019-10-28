@@ -538,3 +538,21 @@ Position the cursor at it's beginning, according to the current mode."
 ;;   (volatile-highlights-mode t))
 
 #+END_SRC
+* some-new-package-todo
+#+BEGIN_SRC emacs-lisp
+;; (use-package neotree
+;;   :config
+;;   ;; (setq neo-mode-line-type 'none)
+;;   (defun neo-default-display-fn(buffer _alist)
+;;     (let ((window-pos (if (eq neo-window-position 'left) 'left 'right)))
+;;       (display-buffer-in-side-window buffer `((side . ,window-pos)(slot . -2))))))
+
+;; (use-package imenu-list
+;;   :ensure t
+;;   :bind (("C-'" . imenu-list-smart-toggle))
+;;   :config
+;;   (setq imenu-list-focus-after-activation t
+;;         imenu-list-auto-resize nil))
+#+End_SRC
+
+  
