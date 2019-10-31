@@ -49,8 +49,9 @@
 #+END_SRC
 * emacs-register
 #+BEGIN_SRC emacs-lisp
+# C-x r j h
 (set-register ?h (cons 'file "~/.emacs.d/selfdoc/hotkeys.org"))
-(set-register ?h (cons 'file "~/.emacs.d/selfdoc/notes.org"))
+(set-register ?n (cons 'file "~/.emacs.d/selfdoc/notes.org"))
 #+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
