@@ -1,6 +1,6 @@
 * General
 #+BEGIN_SRC emacs-lisp
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 (tool-bar-mode -1)
 
 ;; 垃圾回收的频率, 默认是800000, 即每分配大约800K的内存就进行一次垃圾回收
@@ -46,6 +46,11 @@
 
 ;; Highlight current line
 (global-hl-line-mode t)
+#+END_SRC
+* emacs-register
+#+BEGIN_SRC emacs-lisp
+(set-register ?h (cons 'file "~/.emacs.d/selfdoc/hotkeys.org"))
+(set-register ?h (cons 'file "~/.emacs.d/selfdoc/notes.org"))
 #+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
@@ -551,8 +556,16 @@ Position the cursor at it's beginning, according to the current mode."
 ;;   :ensure t
 ;;   :bind (("C-'" . imenu-list-smart-toggle))
 ;;   :config
-;;   (setq imenu-list-focus-after-activation t
-;;         imenu-list-auto-resize nil))
+;;   (progn
+;;     (setq imenu-list-size     0.2)
+;;     (setq imenu-list-position 'left)
+;;     (setq imenu-list-focus-after-activation t
+;;           imenu-list-auto-resize nil)))
+
+;; (use-package sr-speedbar)
+
+
+
 #+End_SRC
 
   
