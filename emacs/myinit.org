@@ -49,9 +49,15 @@
 #+END_SRC
 * emacs-register
 #+BEGIN_SRC emacs-lisp
-# C-x r j h
 (set-register ?h (cons 'file "~/.emacs.d/selfdoc/hotkeys.org"))
 (set-register ?n (cons 'file "~/.emacs.d/selfdoc/notes.org"))
+#+END_SRC
+* Babel
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (sh . t)))
 #+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
@@ -565,9 +571,6 @@ Position the cursor at it's beginning, according to the current mode."
 ;;           imenu-list-auto-resize nil)))
 
 ;; (use-package sr-speedbar)
-
-
-
 #+End_SRC
 
   
