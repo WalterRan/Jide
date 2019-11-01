@@ -57,7 +57,10 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)
-   (sh . t)))
+   (sh . t)
+   (plantuml . t)))
+(setq org-plantuml-jar-path
+      (expand-file-name "~/.emacs.d/plantuml.jar"))
 #+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
@@ -171,6 +174,7 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 (setq org-src-fontify-natively t)
+(setq org-startup-with-inline-images t)
 #+END_SRC
 * Ace-window
 #+BEGIN_SRC emacs-lisp

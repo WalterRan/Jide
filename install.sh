@@ -25,6 +25,8 @@ install_emacs() {
 
     cd $current_path
     cp -ri ./emacs ~/.emacs.d
+
+    echo "TODO: Get plantuml.jar and put to ~/.emacs.d/"
 }
 
 install_vim() {
