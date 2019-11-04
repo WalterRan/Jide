@@ -515,9 +515,9 @@ Position the cursor at it's beginning, according to the current mode."
 #+END_SRC
 * golang
 #+BEGIN_SRC emacs-lisp
-(use-package go-mode
-  :ensure t
-  )
+;; (use-package go-mode
+;;   :ensure t
+;;   )
 #+END_SRC
 * highlight
 #+BEGIN_SRC emacs-lisp
