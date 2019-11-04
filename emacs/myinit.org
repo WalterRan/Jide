@@ -1,6 +1,6 @@
 * General
 #+BEGIN_SRC emacs-lisp
-(menu-bar-mode 1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; 垃圾回收的频率, 默认是800000, 即每分配大约800K的内存就进行一次垃圾回收
