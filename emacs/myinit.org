@@ -521,7 +521,12 @@ Position the cursor at it's beginning, according to the current mode."
 #+END_SRC
 * highlight
 #+BEGIN_SRC emacs-lisp
-(require 'highlight-symbol)
+(use-package highlight-symbol
+  :ensure t
+  :config
+  (setq highlight-symbol-idle-delay 0.5)
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode))
+
 (global-set-key [(control f8)] 'highlight-symbol)
 (global-set-key [f8] 'highlight-symbol-next)
 (global-set-key [(shift f8)] 'highlight-symbol-prev)
