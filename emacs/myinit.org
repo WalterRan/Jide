@@ -526,7 +526,7 @@ Position the cursor at it's beginning, according to the current mode."
       (list
 	(cond
 	 (t
-	  (centaur-tabs-get-group-name (current-buffer))))))
+	  "Emacs"))))
 
 (setq centaur-tabs-set-close-button nil)
 (setq centaur-tabs-set-bar 'left)
