@@ -521,25 +521,8 @@ Position the cursor at it's beginning, according to the current mode."
 
 (imenu-list-minor-mode)
 #+END_SRC
-* unused
-#+BEGIN_SRC emacs-lisp
-;; Compilation
-;;(global-set-key (kbd "<f5>") (lambda ()
-;;                               (interactive)
-;;                               (setq-local compilation-read-command nil)
-;;                               (call-interactively 'compile)))
-
-;; 用S-<up>、S-<right>跳转到上面、右边的窗口
-;; (windmove-default-keybindings)
-
-;; Package: volatile-highlights
-;; GROUP: Editing -> Volatile Highlights
-;; (use-package volatile-highlights
-;;   :init
-;;   (volatile-highlights-mode t))
-
-#+END_SRC
 * some-new-package-todo
+** neotree
 #+BEGIN_SRC emacs-lisp
 ;; (use-package neotree
 ;;   :config
@@ -547,10 +530,34 @@ Position the cursor at it's beginning, according to the current mode."
 ;;   (defun neo-default-display-fn(buffer _alist)
 ;;     (let ((window-pos (if (eq neo-window-position 'left) 'left 'right)))
 ;;       (display-buffer-in-side-window buffer `((side . ,window-pos)(slot . -2))))))
-
-;; (use-package sr-speedbar)
 #+End_SRC
-* cedet
+** sr-speedbar
+#+BEGIN_SRC emacs-lisp
+;; (use-package sr-speedbar)
+#+END_SRC
+* unused config
+** compilation
+#+BEGIN_SRC emacs-lisp
+;; Compilation
+;;(global-set-key (kbd "<f5>") (lambda ()
+;;                               (interactive)
+;;                               (setq-local compilation-read-command nil)
+;;                               (call-interactively 'compile)))
+#+END_SRC
+** windmove
+#+BEGIN_SRC emacs-lisp
+;; 用S-<up>、S-<right>跳转到上面、右边的窗口
+;; (windmove-default-keybindings)
+#+END_SRC
+** volatile-highlights
+#+BEGIN_SRC emacs-lisp
+;; Package: volatile-highlights
+;; GROUP: Editing -> Volatile Highlights
+;; (use-package volatile-highlights
+;;   :init
+;;   (volatile-highlights-mode t))
+#+END_SRC
+** cedet
 #+BEGIN_SRC emacs-lisp
 ;; (require 'cc-mode)
 ;; (require 'semantic)
@@ -575,8 +582,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; (provide 'setup-cedet)
 #+END_SRC
-
-* centaur-tabs
+** centaur-tabs
 #+BEGIN_SRC emacs-lisp
 ;; (use-package centaur-tabs
 ;;   :demand
