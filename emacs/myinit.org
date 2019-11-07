@@ -2,6 +2,7 @@
 #+BEGIN_SRC emacs-lisp
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; 垃圾回收的频率, 默认是800000, 即每分配大约800K的内存就进行一次垃圾回收
 (setq gc-cons-threshold (* 100 1024 1024))
@@ -514,10 +515,10 @@ Position the cursor at it's beginning, according to the current mode."
   :bind (("C-'" . imenu-list-smart-toggle))
   :config
   (progn
-;;     (setq imenu-list-size     0.2)
+    (setq imenu-list-size     0.2)
     (setq imenu-list-position 'right)
     (setq imenu-list-focus-after-activation nil
-          imenu-list-auto-resize t)))
+          imenu-list-auto-resize nil)))
 
 (imenu-list-smart-toggle)
 ;; (imenu-list-minor-mode)
