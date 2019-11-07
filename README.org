@@ -28,6 +28,6 @@
 
 * Refrence
 
-** [[https://github.com/danielcnorris/centaur-emacs][Centaur Emacs]]
+  [[https://github.com/danielcnorris/centaur-emacs][Centaur Emacs]]
 
-** [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
+  [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
