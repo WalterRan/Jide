@@ -531,6 +531,20 @@ Position the cursor at it's beginning, according to the current mode."
 (setq centaur-tabs-set-close-button nil)
 (setq centaur-tabs-set-bar 'left)
 #+END_SRC
+* imenu-list
+#+BEGIN_SRC emacs-lisp
+(use-package imenu-list
+  :ensure t
+  :bind (("C-'" . imenu-list-smart-toggle))
+  :config
+  (progn
+    (setq imenu-list-size     0.2)
+    (setq imenu-list-position 'right)
+    (setq imenu-list-focus-after-activation t
+          imenu-list-auto-resize nil)))
+
+(imenu-list-minor-mode)
+#+END_SRC
 * unused
 #+BEGIN_SRC emacs-lisp
 ;; Compilation
@@ -558,19 +572,8 @@ Position the cursor at it's beginning, according to the current mode."
 ;;     (let ((window-pos (if (eq neo-window-position 'left) 'left 'right)))
 ;;       (display-buffer-in-side-window buffer `((side . ,window-pos)(slot . -2))))))
 
-;; (use-package imenu-list
-;;   :ensure t
-;;   :bind (("C-'" . imenu-list-smart-toggle))
-;;   :config
-;;   (progn
-;;     (setq imenu-list-size     0.2)
-;;     (setq imenu-list-position 'left)
-;;     (setq imenu-list-focus-after-activation t
-;;           imenu-list-auto-resize nil)))
-
 ;; (use-package sr-speedbar)
 #+End_SRC
-
 * cedet
 #+BEGIN_SRC emacs-lisp
 ;; (require 'cc-mode)
