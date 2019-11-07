@@ -514,12 +514,13 @@ Position the cursor at it's beginning, according to the current mode."
   :bind (("C-'" . imenu-list-smart-toggle))
   :config
   (progn
-    (setq imenu-list-size     0.2)
+;;     (setq imenu-list-size     0.2)
     (setq imenu-list-position 'right)
-    (setq imenu-list-focus-after-activation t
-          imenu-list-auto-resize nil)))
+    (setq imenu-list-focus-after-activation nil
+          imenu-list-auto-resize t)))
 
-(imenu-list-minor-mode)
+(imenu-list-smart-toggle)
+;; (imenu-list-minor-mode)
 #+END_SRC
 * some-new-package-todo
 ** neotree
