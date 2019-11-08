@@ -533,6 +533,14 @@ Position the cursor at it's beginning, according to the current mode."
 (set-face-attribute 'mode-line nil :height 100)
 (set-face-attribute 'mode-line-inactive nil :height 100)
 #+END_SRC
+* Nyan-mode
+#+BEGIN_SRC emacs-lisp
+(use-package nyan-mode
+  :ensure t
+)
+(nyan-mode t)
+(nyan-start-animation)
+#+END_SRC
 * some-new-package-todo
 ** neotree
 #+BEGIN_SRC emacs-lisp
