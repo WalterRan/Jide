@@ -523,6 +523,16 @@ Position the cursor at it's beginning, according to the current mode."
 (imenu-list-smart-toggle)
 ;; (imenu-list-minor-mode)
 #+END_SRC
+* doom-modeline
+#+BEGIN_SRC emacs-lisp
+(use-package doom-modeline
+      :ensure t
+      :hook (after-init . doom-modeline-mode))
+
+(setq doom-modeline-height 1)
+(set-face-attribute 'mode-line nil :height 100)
+(set-face-attribute 'mode-line-inactive nil :height 100)
+#+END_SRC
 * some-new-package-todo
 ** neotree
 #+BEGIN_SRC emacs-lisp
