@@ -541,6 +541,13 @@ Position the cursor at it's beginning, according to the current mode."
 (nyan-mode t)
 (nyan-start-animation)
 #+END_SRC
+* highlight-parentheses
+#+BEGIN_SRC emacs-lisp
+(use-package highlight-parentheses
+  :ensure t
+)
+(highlight-parentheses-mode t)
+#+END_SRC
 * some-new-package-todo
 ** neotree
 #+BEGIN_SRC emacs-lisp
