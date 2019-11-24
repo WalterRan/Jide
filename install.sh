@@ -7,6 +7,7 @@ install_emacs() {
 
     yum -y install libXpm-devel libjpeg-turbo-devel openjpeg-devel openjpeg2-devel turbojpeg-devel giflib-devel libtiff-devel gnutls-devel libxml2-devel GConf2-devel dbus-devel wxGTK-devel gtk3-devel libselinux-devel gpm-devel librsvg2-devel ImageMagick-devel libncurses-dev ncurses-devel gcc global
 
+    # Install emacs
     cd /tmp
 
     curl -O http://ftp.gnu.org/gnu/emacs/emacs-25.2.tar.gz
@@ -23,6 +24,14 @@ install_emacs() {
 
     rm -rf ~/.emacs.d
 
+    # Install python lsp for emacs
+    yum -y install python3 python3-devel python3-pip
+
+    pip3 install pipenv
+
+    pipenv install 'python-language-server[all]'
+
+    # Update configrations
     cd $current_path
     cp -ri ./emacs ~/.emacs.d
 
