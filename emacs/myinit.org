@@ -55,13 +55,13 @@
 #+END_SRC
 * Babel
 #+BEGIN_SRC emacs-lisp
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((python . t)
-   (sh . t)
-   (plantuml . t)))
-(setq org-plantuml-jar-path
-      (expand-file-name "~/.emacs.d/plantuml.jar"))
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((python . t)
+;;    (sh . t)
+;;    (plantuml . t)))
+;; (setq org-plantuml-jar-path
+;;       (expand-file-name "~/.emacs.d/plantuml.jar"))
 #+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
