@@ -4,6 +4,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Disable files backup function
+(setq make-backup-files nil)
+
 ;; 垃圾回收的频率, 默认是800000, 即每分配大约800K的内存就进行一次垃圾回收
 (setq gc-cons-threshold (* 100 1024 1024))
 ;; 关闭欢迎界面
