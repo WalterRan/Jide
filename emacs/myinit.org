@@ -47,9 +47,6 @@
 
 ;; Always show line numbers
 (global-linum-mode 1)
-
-;; Highlight current line
-(global-hl-line-mode t)
 #+END_SRC
 * emacs-register
 #+BEGIN_SRC emacs-lisp
@@ -500,6 +497,7 @@ Position the cursor at it's beginning, according to the current mode."
 #+END_SRC
 * highlight
 #+BEGIN_SRC emacs-lisp
+;; Highlight symbol
 (use-package highlight-symbol
   :ensure t
   :config
@@ -510,6 +508,20 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key [f8] 'highlight-symbol-next)
 (global-set-key [(shift f8)] 'highlight-symbol-prev)
 (global-set-key [(meta f8)] 'highlight-symbol-query-replace)
+
+;; Highlight current line
+(global-hl-line-mode t)
+
+;; Highlight matching parentheses shen cursor on brace
+(require 'paren)
+(setq show-paren-style 'parenthesis)
+(show-paren-mode +1)
+
+;; Highlight matching parentheses when cursor in brace
+(use-package highlight-parentheses
+  :ensure t
+)
+(highlight-parentheses-mode t)
 #+END_SRC
 * imenu-list
 #+BEGIN_SRC emacs-lisp
@@ -545,13 +557,6 @@ Position the cursor at it's beginning, according to the current mode."
 )
 (nyan-mode t)
 (nyan-start-animation)
-#+END_SRC
-* highlight-parentheses
-#+BEGIN_SRC emacs-lisp
-(use-package highlight-parentheses
-  :ensure t
-)
-(highlight-parentheses-mode t)
 #+END_SRC
 * lsp-mode
 #+BEGIN_SRC emacs-lisp
@@ -646,10 +651,11 @@ Position the cursor at it's beginning, according to the current mode."
 ;;     All buffer name start with * will group to \"Emacs\".
 ;;     Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;;       (list
-;; 	(cond
-;; 	 (t
-;; 	  "Emacs"))))
+;;  (cond
+;;   (t
+;;    "Emacs"))))
 
 ;; (setq centaur-tabs-set-close-button nil)
 ;; (setq centaur-tabs-set-bar 'left)
 #+END_SRC
+
