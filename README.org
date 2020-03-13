@@ -8,6 +8,21 @@
 
    Run M-x all-the-icons-install-fonts to do so. 
 
+** Emacs projectil
+
+*** GNU findutils (In using)
+
+    Install gnu findutils and put C:\Program Files (x86)\GnuWin32\bin at the top of your PATH variable
+
+    And then of course close emacs and start it again (no restart) to get the new PATH in emacs.
+
+    REFS: https://github.com/bbatsov/projectile/issues/827
+
+*** pt (unverified)
+
+    Configure custom searchers
+
+    REFS: https://github.com/bbatsov/projectile/issues/1124
 
 * Submodules
 
