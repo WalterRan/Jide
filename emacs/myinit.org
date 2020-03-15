@@ -57,6 +57,15 @@
 ;; Always show line numbers
 (global-linum-mode 1)
 #+END_SRC
+* Helm
+#+BEGIN_SRC emacs-lisp
+(use-package helm
+  :init
+  (progn
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)))
+#+END_SRC
 * company
 #+BEGIN_SRC emacs-lisp
 ;; company: A text completion framework
@@ -109,8 +118,9 @@
     (global-set-key "\C-s" 'swiper)
     (global-set-key (kbd "C-c C-r") 'ivy-resume)
     ;; (global-set-key (kbd "<f6>") 'ivy-resume)
-    (global-set-key (kbd "M-x") 'counsel-M-x)
-    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    ;; (global-set-key (kbd "M-x") 'counsel-M-x)
+    ;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    ;; (global-set-key (kbd "C-x C-b") 'counsel-switch-buffer)
     (global-set-key (kbd "<f1> l") 'counsel-find-library)
     (global-set-key (kbd "C-h f") 'counsel-describe-function)
     (global-set-key (kbd "C-h v") 'counsel-describe-variable)
