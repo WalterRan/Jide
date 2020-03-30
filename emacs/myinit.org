@@ -173,7 +173,9 @@
 (use-package org-bullets
   :ensure t
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list
+  '("●" "•" "►" "▸" "◉")))
 ;; 让org-mode中的代码片段语法高亮显示
 (setq org-src-fontify-natively t)
 (setq org-startup-with-inline-images t)
