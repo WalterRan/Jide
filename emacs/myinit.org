@@ -521,6 +521,8 @@ Position the cursor at it's beginning, according to the current mode."
 ;; Highlight matching parentheses when cursor in brace
 (use-package highlight-parentheses
   :ensure t
+  :config
+  (setq hl-paren-colors '("Cyan2" "IndianRed1" "Cyan1" "SpringGreen1" "DeepSkyBlue" "Gold1"))
 )
 (highlight-parentheses-mode t)
 #+END_SRC
