@@ -33,15 +33,13 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; Activate whitespace-mode to view all whitespace characters
-(global-set-key (kbd "C-c w") 'whitespace-mode
-  :ensure t
-  :config
-  (setq whitespace-display-mappings
+(global-set-key (kbd "C-c w") 'whitespace-mode)
+(setq whitespace-display-mappings
     '((space-mark   ?\     [?·]     [?.])       ; space - middle dot
       (space-mark   ?\xA0  [?¤]     [?_])       ; hard space - currency sign
       (newline-mark ?\n    [?↵ ?\n] [?$ ?\n])   ; eol - downwards arrow
       (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])  ; tab - right guillemet
-     )))
+     ))
 
 ;; Press F11 to fullscreen
 (defun fullscreen ()
