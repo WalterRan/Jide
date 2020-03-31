@@ -37,10 +37,10 @@
   :ensure t
   :config
   (setq whitespace-display-mappings
-    '((space-mark   ?\     [?·]     [?.])
-      (space-mark   ?\xA0  [?¤]     [?_])
-      (newline-mark ?\n    [?↵ ?\n] [?$ ?\n])
-      (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])
+    '((space-mark   ?\     [?·]     [?.])       ; space - middle dot
+      (space-mark   ?\xA0  [?¤]     [?_])       ; hard space - currency sign
+      (newline-mark ?\n    [?↵ ?\n] [?$ ?\n])   ; eol - downwards arrow
+      (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])  ; tab - right guillemet
      )))
 
 ;; Press F11 to fullscreen
