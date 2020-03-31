@@ -12,6 +12,9 @@
 ;; 关闭欢迎界面
 (setq inhibit-startup-message t)
 
+;; Maximize Emacs frame on start-up
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; y or n is enough
 (defalias 'yes-or-no-p 'y-or-n-p)
 
