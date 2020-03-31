@@ -680,8 +680,12 @@ Position the cursor at it's beginning, according to the current mode."
 ;; (setq centaur-tabs-set-close-button nil)
 ;; (setq centaur-tabs-set-bar 'left)
 #+END_SRC
+** paren
+#+BEGIN_SRC emacs-lisp
 ;; Highlight matching parentheses shen cursor on brace
 ;; (require 'paren)
 ;; (setq show-paren-style 'parenthesis)
 ;; (show-paren-mode +1)
+#+END_SRC
+
 
