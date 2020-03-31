@@ -32,8 +32,16 @@
 ;; automatically indent when press RET
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-;; activate whitespace-mode to view all whitespace characters
-(global-set-key (kbd "C-c w") 'whitespace-mode)
+;; Activate whitespace-mode to view all whitespace characters
+(global-set-key (kbd "C-c w") 'whitespace-mode
+  :ensure t
+  :config
+  (setq whitespace-display-mappings
+    '((space-mark   ?\     [?·]     [?.])
+      (space-mark   ?\xA0  [?¤]     [?_])
+      (newline-mark ?\n    [?↵ ?\n] [?$ ?\n])
+      (tab-mark     ?\t    [?» ?\t] [?\\ ?\t])
+     )))
 
 ;; Press F11 to fullscreen
 (defun fullscreen ()
