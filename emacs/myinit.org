@@ -239,6 +239,12 @@
 
 (provide 'setup-ivy-counsel)
 #+END_SRC
+* avy
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+#+END_SRC
 * setup-editing
 #+BEGIN_SRC emacs-lisp
 ;; GROUP: Editing -> Editing Basics
