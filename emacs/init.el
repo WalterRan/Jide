@@ -32,9 +32,3 @@
 ;; (require 'setup-ggtags)
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/myinit.org"))
-
-
-;;(use-package avy
-;;  :ensure t
-;;  :bind ("M-b" . avy-goto-char))
-
