@@ -203,6 +203,7 @@
 (use-package avy
   :ensure t)
 (global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
 #+END_SRC
 * setup-editing
 #+BEGIN_SRC emacs-lisp
