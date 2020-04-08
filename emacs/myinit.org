@@ -547,6 +547,13 @@ Position the cursor at it's beginning, according to the current mode."
 ;; optionally if you want to use debugger
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; Normally the python-language-server will be downloaded automatically if it doesn’t exist while opening the python scripts.
+(use-package lsp-python-ms
+  :ensure nil
+  :hook (python-mode . (lambda ()
+    (require 'lsp-python-ms)
+    (lsp))))
 #+END_SRC
 * some-new-package-todo
 ** neotree
