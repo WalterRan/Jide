@@ -1,3 +1,4 @@
+#+STARTUP: showall
 # Jide
 
 * Notes
@@ -8,21 +9,29 @@
 
    Run M-x all-the-icons-install-fonts to do so. 
 
-** Emacs projectil
+** Emacs projectil in Windows
 
-*** GNU findutils (In using)
+*** [[https://sourceforge.net/projects/unxutils/][UnxUtils]] [[https://stackoverflow.com/questions/3995493/gnuwin32-find-exe-expands-wildcard-before-performing-search/3996353#3996353][Refrence]]
+
+    Gnuwin32's find.exe is not working on recent Windows Versions (Vista, Seven) because it expands wildcards matching only the contents of the current directory.
+
+    Similarly, an old version of find.exe from UnxUtils suffered the same bug.
+
+    The latest find.exe from [[https://sourceforge.net/projects/unxutils/][UnxUtils]] is working.
+
+    Install UnxUtils and put C:\UnxUtils\usr\local\wbin at the top of PATH variable
+
+*** GNU findutils [[https://github.com/bbatsov/projectile/issues/827][Refrence]]
 
     Install gnu findutils and put C:\Program Files (x86)\GnuWin32\bin at the top of your PATH variable
 
     And then of course close emacs and start it again (no restart) to get the new PATH in emacs.
 
-    REFS: https://github.com/bbatsov/projectile/issues/827
+    Not working when running rgrep with an error of 'find: paths must precede expression'
 
-*** pt (unverified)
+*** pt [[https://github.com/bbatsov/projectile/issues/1124][Refrence]]
 
-    Configure custom searchers
-
-    REFS: https://github.com/bbatsov/projectile/issues/1124
+    Configure custom searchers, unverified.
 
 * Submodules
 
