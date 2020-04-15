@@ -486,6 +486,8 @@ Position the cursor at it's beginning, according to the current mode."
   :hook (python-mode . lsp)
   :commands lsp)
 
+(global-set-key [f7] 'lsp-treemacs-symbols)
+
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
 (use-package company-lsp :commands company-lsp)
