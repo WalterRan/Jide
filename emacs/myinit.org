@@ -499,7 +499,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; Normally the python-language-server will be downloaded automatically if it doesn’t exist while opening the python scripts.
 (use-package lsp-python-ms
-  :ensure nil
+  :ensure t
   :hook (python-mode . (lambda ()
     (require 'lsp-python-ms)
     (lsp))))
