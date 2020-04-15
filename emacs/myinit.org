@@ -91,13 +91,6 @@
         projectile-globally-ignored-files))
 )
 #+END_SRC
-* zygospore
-#+BEGIN_SRC emacs-lisp
-;; zygospore lets you revert C-x 1 (delete-other-window) by pressing C-x 1 again
-(use-package zygospore
-  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
-         ("RET" .   newline-and-indent)))
-#+END_SRC
 * Swiper
 #+BEGIN_SRC emacs-lisp
 (use-package ivy)
@@ -134,23 +127,6 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
     ))
 #+END_SRC
-* Input method
-#+BEGIN_SRC emacs-lisp
-;; (require 'pyim)
-;; (require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
-;; (pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
-;; (setq default-input-method "pyim")
-#+END_SRC
-* gdb
-#+BEGIN_SRC emacs-lisp
-(setq
- ;; use gdb-many-windows by default
- gdb-many-windows t
-
- ;; Non-nil means display source file containing the main routine at startup
- gdb-show-main t
- )
-#+END_SRC
 * org-mode
 #+BEGIN_SRC emacs-lisp
 ;; Org-mode stuff
@@ -176,15 +152,6 @@
      '(aw-leading-char-face
        ((t (:inherit ace-jump-face-foreground :height 4.0)))))
     ))
-#+END_SRC
-* Reveal.js
-#+BEGIN_SRC emacs-lisp
-;; Reveal.js
-;; (use-package ox-reveal
-;;  :ensure ox-reveal)
-
-;; (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-;; (setq org-reveal-mathjax t)
 #+END_SRC
 * avy
 #+BEGIN_SRC emacs-lisp
@@ -455,12 +422,6 @@ Position the cursor at it's beginning, according to the current mode."
   :ensure t
   )
 #+END_SRC
-* golang
-#+BEGIN_SRC emacs-lisp
-;; (use-package go-mode
-;;   :ensure t
-;;   )
-#+END_SRC
 * highlight
 #+BEGIN_SRC emacs-lisp
 ;; Highlight symbol
@@ -487,21 +448,6 @@ Position the cursor at it's beginning, according to the current mode."
   (setq hl-paren-highlight-adjacent t)
 )
 (global-highlight-parentheses-mode t)
-#+END_SRC
-* imenu-list
-#+BEGIN_SRC emacs-lisp
-(use-package imenu-list
-  :ensure t
-  :bind (("C-'" . imenu-list-smart-toggle))
-  :config
-  (progn
-    (setq imenu-list-size     0.2)
-    (setq imenu-list-position 'right)
-    (setq imenu-list-focus-after-activation nil
-          imenu-list-auto-resize nil)))
-
-(imenu-list-smart-toggle)
-;; (imenu-list-minor-mode)
 #+END_SRC
 * doom-modeline
 #+BEGIN_SRC emacs-lisp
@@ -681,4 +627,58 @@ Position the cursor at it's beginning, according to the current mode."
 ;;    (plantuml . t)))
 ;; (setq org-plantuml-jar-path
 ;;       (expand-file-name "~/.emacs.d/plantuml.jar"))
+#+END_SRC
+** gdb
+#+BEGIN_SRC emacs-lisp
+;; (setq
+;;  use gdb-many-windows by default
+;;  gdb-many-windows t
+
+;;  Non-nil means display source file containing the main routine at startup
+;;  gdb-show-main t
+;;  )
+#+END_SRC
+** Input method
+#+BEGIN_SRC emacs-lisp
+;; (require 'pyim)
+;; (require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+;; (pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
+;; (setq default-input-method "pyim")
+#+END_SRC
+** Reveal.js
+#+BEGIN_SRC emacs-lisp
+;; Reveal.js
+;; (use-package ox-reveal
+;;  :ensure ox-reveal)
+
+;; (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+;; (setq org-reveal-mathjax t)
+#+END_SRC
+** golang
+#+BEGIN_SRC emacs-lisp
+;; (use-package go-mode
+;;   :ensure t
+;;   )
+#+END_SRC
+** imenu-list
+#+BEGIN_SRC emacs-lisp
+;; (use-package imenu-list
+;;   :ensure t
+;;   :bind (("C-'" . imenu-list-smart-toggle))
+;;   :config
+;;   (progn
+;;     (setq imenu-list-size     0.2)
+;;     (setq imenu-list-position 'right)
+;;     (setq imenu-list-focus-after-activation nil
+;;           imenu-list-auto-resize nil)))
+
+;; (imenu-list-smart-toggle)
+;; (imenu-list-minor-mode)
+#+END_SRC
+** zygospore
+#+BEGIN_SRC emacs-lisp
+;; zygospore lets you revert C-x 1 (delete-other-window) by pressing C-x 1 again
+;; (use-package zygospore
+;;   :bind (("C-x 1" . zygospore-toggle-delete-other-windows)
+;;          ("RET" .   newline-and-indent)))
 #+END_SRC
