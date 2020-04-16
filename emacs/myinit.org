@@ -81,6 +81,8 @@
     (append '("*.gz" "*.pyc" "*.jar" "*.tar.gz" "*.tgz" "*.zip" "*.o" "*.rpm" "*.iso" "GTAGS" "GPATH" "GRTAGS" "*.swp")
         projectile-globally-ignored-files))
 )
+
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+END_SRC
 * Swiper
 #+BEGIN_SRC emacs-lisp
