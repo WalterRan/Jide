@@ -411,14 +411,9 @@ Position the cursor at it's beginning, according to the current mode."
 #+END_SRC
 * Theme
 #+BEGIN_SRC emacs-lisp
-;; (use-package lush-theme
-;;   :ensure t
-;;   )
-
-(use-package sublime-themes
+(use-package lush-theme
   :ensure t
   )
-(load-theme 'odersky t)
 #+END_SRC
 * highlight
 #+BEGIN_SRC emacs-lisp
