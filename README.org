@@ -33,6 +33,10 @@
 
     Configure custom searchers, unverified.
 
+** Emacs starting daemon with systemd
+
+   Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
+
 * Submodules
 
 ** vim
