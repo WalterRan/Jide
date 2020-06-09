@@ -37,6 +37,20 @@
 
    Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
 
+** Tmux install nord-tmux theme
+
+   REF: https://www.nordtheme.com/docs/ports/tmux/installation
+
+   yum install tmux -y
+   
+   mkdir -p ~/.tmux/themes/
+   
+   git clone https://github.com/arcticicestudio/nord-tmux.git ~/.tmux/themes/nord.tmux
+   
+   echo "run-shell \"~/.tmux/themes/nord-tmux/nord.tmux\"" > ~/.tmux.conf
+   
+   tmux source-file ~/.tmux.conf
+
 * Submodules
 
 ** vim
