@@ -506,6 +506,26 @@ Position the cursor at it's beginning, according to the current mode."
     (require 'lsp-python-ms)
     (lsp))))
 #+END_SRC
+* Nuage-log-mode
+#+BEGIN_SRC emacs-lisp
+(require 'generic-x) ;; we need this
+    
+(define-generic-mode 
+  'nuage-log-mode ;; name of the mode to create
+  '()       ;; comments start with
+  '()       ;; some keywords
+  '(("\\b[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9].[0-9][0-9][0-9]\\b" . font-lock-keyword-face) ;; date
+    ("\\[req-\\w\\{8\\}-\\w\\{4\\}-\\w\\{4\\}-\\w\\{4\\}-\\w\\{12\\} \\w+ \\w+ - \\w+ \\w+\\]" . font-lock-comment-face) ;; requst-sequence
+    ("DEBUG [A-Za-z0-9_]+\\(\\.[A-Za-z0-9_]+\\)+" . font-lock-type-face) ;; DEBUG and WARNING
+    ("WARNING [A-Za-z0-9_]+\\(\\.[A-Za-z0-9_]+\\)+" . font-lock-warning-face) ;; WARNING
+    ("ERROR [A-Za-z0-9_]+\\(\\.[A-Za-z0-9_]+\\)+" . font-lock-constant-face) ;; ERROR
+    ("\\(\\/[A-Za-z0-9-\\_\\.]+\\)+:[0-9]+" . font-lock-doc-face) ;; python file-path
+   )
+  '("\\.foo$")                     ;; files for which to activate this mode 
+  nil                              ;; other functions to call
+  "A mode for Nuage-log files"     ;; doc string for this mode
+)
+#+END_SRC
 * some-new-package-todo
 ** neotree
 #+BEGIN_SRC emacs-lisp
