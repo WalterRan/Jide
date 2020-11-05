@@ -10,11 +10,11 @@ install_emacs() {
     # Install emacs
     cd /tmp
 
-    curl -O http://ftp.gnu.org/gnu/emacs/emacs-25.2.tar.gz
+    curl -O http://ftp.gnu.org/gnu/emacs/emacs-27.1.tar.gz
 
-    tar -zxvf emacs-25.2.tar.gz
+    tar -zxvf emacs-27.1.tar.gz
 
-    cd emacs-25.2
+    cd emacs-27.1
 
     ./configure
 
