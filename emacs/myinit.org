@@ -677,17 +677,17 @@ Position the cursor at it's beginning, according to the current mode."
 #+END_SRC
 ** imenu-list
 #+BEGIN_SRC emacs-lisp
-;; (use-package imenu-list
-;;   :ensure t
-;;   :bind (("C-'" . imenu-list-smart-toggle))
-;;   :config
-;;   (progn
-;;     (setq imenu-list-size     0.2)
-;;     (setq imenu-list-position 'right)
-;;     (setq imenu-list-focus-after-activation nil
-;;           imenu-list-auto-resize nil)))
+(use-package imenu-list
+  :ensure t
+  :bind (("C-'" . imenu-list-smart-toggle))
+  :config
+  (progn
+    (setq imenu-list-size     0.2)
+    (setq imenu-list-position 'right)
+    (setq imenu-list-focus-after-activation nil
+          imenu-list-auto-resize nil)))
 
-;; (imenu-list-smart-toggle)
+(imenu-list-smart-toggle)
 ;; (imenu-list-minor-mode)
 #+END_SRC
 ** zygospore
