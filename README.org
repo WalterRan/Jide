@@ -100,3 +100,24 @@
   [[https://github.com/danielcnorris/centaur-emacs][Centaur Emacs]]
 
   [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
+
+* Gdb dashboard
+https://github.com/cyrus-and/gdb-dashboard
+
+https://github.com/cyrus-and/gdb-dashboard/wiki/Support-older-GDB-versions
+
+GDB dashboard requires at least GDB 7.7 compiled with Python 2.7 in order to work properly.
+
+If it is really impossible to use an up-to-date version, the following script will patch the dashboard and add the missing pieces (some features may suffer from this):
+
+mkdir -p ~/.gdbinit.d/
+wget 'https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=blob_plain;f=gdb/python/lib/gdb/FrameDecorator.py;hb=4bd8fc3a1362970d9800a263987af8093798338b' -O ~/.gdbinit.d/FrameDecorator.py
+sed -i '1s/^/python gdb.COMPLETE_EXPRESSION = gdb.COMPLETE_SYMBOL\n/' .gdbinit
+sed -i "s/gdb_breakpoint.temporary/None/g" .gdbinit
+cat >>~/.gdbinit <<EOF
+python
+import imp
+gdb.FrameDecorator = imp.new_module('FrameDecorator')
+gdb.FrameDecorator.FrameDecorator = FrameDecorator
+end
+EOF
