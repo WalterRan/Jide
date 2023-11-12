@@ -16,6 +16,9 @@
     :config
     (nyan-mode t)
     (nyan-start-animation))
+
+  (blink-cursor-mode 0)
+  (global-hl-line-mode t)
 #+end_src
 * Swiper
 #+begin_src emacs-lisp
