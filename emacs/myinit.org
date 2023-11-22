@@ -19,6 +19,17 @@
 
   (blink-cursor-mode 0)
   (global-hl-line-mode t)
+  (global-display-line-numbers-mode)
+  (use-package imenu-list
+    :ensure t
+    :config
+    (progn
+      (setq imenu-list-size 0.2)
+      (setq imenu-list-position 'right)
+      (setq imenu-list-focus-after-activation nil
+	    imenu-list-auto-resize nil)))
+  (imenu-list-smart-toggle)
+
 #+end_src
 * Swiper
 #+begin_src emacs-lisp
