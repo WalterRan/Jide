@@ -31,6 +31,32 @@
   (imenu-list-smart-toggle)
 
 #+end_src
+* Font
+#+begin_src emacs-lisp
+  ;; Set default font
+  (cond
+   ((eq system-type 'windows-nt)
+    (when (find-font (font-spec :name "Cascadia Code"))
+      (set-face-attribute 'default nil
+			  :family "Cascadia Code"
+			  :height 110)))
+   ((eq system-type 'gnu/linux)
+    (when (find-font (font-spec :name "Jetbrains Mono"))
+      (set-face-attribute 'default nil
+			  :family "Jetbrains Mono"
+			  :height 110))))
+  ;; Specify font for all unicode characters
+  (when (find-font (font-spec :name "Segoe UI Symbol"))
+    (set-fontset-font t 'unicode "Segoe UI Symbol" nil 'prepend))
+  ;; Specify font for Chinese characters
+  (when (find-font (font-spec :name "WenQuanYi Micro Hei"))
+    (set-fontset-font t '(#x4e00 . #x9fff) "WenQuanYi Micro Hei"))
+  (set-face-attribute 'font-lock-comment-face nil
+		      :slant 'italic)
+  (set-face-attribute 'font-lock-comment-face nil
+		      :slant 'italic)
+  (setq-default line-spacing 0.12)
+#+end_src
 * Swiper
 #+begin_src emacs-lisp
   (use-package counsel

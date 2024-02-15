@@ -1,9 +1,15 @@
 #+STARTUP: showall
-# Jide
+#+OPTIONS: \n:t
 
 * Tips
 In Emacs 29+, set the user-emacs-directory with the flag --init-directory.
 
+When working under Windows system, *Cascadia Code* will be used as the default font if avalible,
+which can be get from [[https://github.com/microsoft/cascadia-code/releases][here]]. The release package needs to download and ttf needs to install as suggested.
+*Segoe UI Symbol* is for all unicode characters and it is installed as default.
+*WenQuanYi Micro Hei* is for Chinese font and can be get from [[https://chinesefonts.org/fonts/wenquanyi-micro-hei-regular][here]].
+
+When working under Linux system, *JetBrains Mono* will be the default font.
 * Notes
 
 ** Emacs doom-modeline
