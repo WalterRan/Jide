@@ -1,7 +1,8 @@
 #+STARTUP: showall
 #+OPTIONS: \n:t
 
-* Tips
+* Emacs
+** Tips
 In Emacs 29+, set the user-emacs-directory with the flag --init-directory.
 
 When working under Windows system, *Cascadia Code* will be used as the default font if avalible,
@@ -10,128 +11,77 @@ which can be get from [[https://github.com/microsoft/cascadia-code/releases][her
 *WenQuanYi Micro Hei* is for Chinese font and can be get from [[https://chinesefonts.org/fonts/wenquanyi-micro-hei-regular][here]].
 
 When working under Linux system, *JetBrains Mono* will be the default font.
-* Shortcuts
+** Shortcuts
 | Name             | Keybinding | Description                                |
 |------------------+------------+--------------------------------------------|
 | er/expand-region | C-=        | Increase selected region by semantic units |
 | org-insert-link  | C-c C-l    | Insert a link                              |
-* Notes
-
 ** Emacs doom-modeline
-
-   This package requires the fonts included with all-the-icons to be installed.
-
-   Run M-x all-the-icons-install-fonts to do so. 
-
-** Emacs projectil in Windows
-
-*** [[https://sourceforge.net/projects/unxutils/][UnxUtils]] [[https://stackoverflow.com/questions/3995493/gnuwin32-find-exe-expands-wildcard-before-performing-search/3996353#3996353][Refrence]]
-
-    Gnuwin32's find.exe is not working on recent Windows Versions (Vista, Seven) because it expands wildcards matching only the contents of the current directory.
-
-    Similarly, an old version of find.exe from UnxUtils suffered the same bug.
-
-    The latest find.exe from [[https://sourceforge.net/projects/unxutils/][UnxUtils]] is working.
-
-    Install UnxUtils and put C:\UnxUtils\usr\local\wbin at the top of PATH variable
-
-*** GNU findutils [[https://github.com/bbatsov/projectile/issues/827][Refrence]]
-
-    Install gnu findutils and put C:\Program Files (x86)\GnuWin32\bin at the top of your PATH variable
-
-    And then of course close emacs and start it again (no restart) to get the new PATH in emacs.
-
-    Not working when running rgrep with an error of 'find: paths must precede expression'
-
-*** pt [[https://github.com/bbatsov/projectile/issues/1124][Refrence]]
-
-    Configure custom searchers, unverified.
-
+This package requires the fonts included with all-the-icons to be installed.
+Run M-x all-the-icons-install-fonts to do so. 
 ** Emacs starting daemon with systemd
+Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
+** Refrence
++ [[https://github.com/danielcnorris/centaur-emacs][Centaur Emacs]]
++ [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
+* VIM
+** Submodules
+#+begin_src sh
+  git submodule add https://github.com/tomasr/molokai.git vim/bundle/molokai
+  git submodule add https://github.com/kien/ctrlp.vim.git vim/bundle/ctrlp
+  git submodule add https://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
+  git submodule add https://github.com/majutsushi/tagbar.git vim/bundle/tagbar
+  git submodule add https://github.com/vim-airline/vim-airline.git vim/bundle/vim-airline
+  git submodule add https://github.com/nathanalderson/yang.vim.git vim/bundle/vim-yang
+  git submodule add https://github.com/tpope/vim-pathogen.git vim/vim-pathogen
+#+end_src
+* ZSH
+** Submodules
+#+begin_src sh
+  git submodule add https://github.com/zsh-users/zsh-syntax-highlighting zsh/zsh-syntax-highlighting
+  git submodule add https://github.com/zsh-users/zsh-autosuggestions zsh/zsh-autosuggestions
+  git submodule add https://github.com/wting/autojump.git zsh/autojump
+#+end_src
+* Tmux
+** Manual install
+#+begin_src sh
+  yum install libevent ncurses libevent-devel ncurses-devel gcc make bison pkg-config automake -y
+  git clone https://github.com/tmux/tmux.git
+  cd tmux && sh autogen.sh
+  ./configure &&  make && make install
+#+end_src
+** Node-tmux theme
+#+begin_src sh
+  # REF: https://www.nordtheme.com/docs/ports/tmux/installation
+  yum install tmux -y
+  mkdir -p ~/.tmux/themes/
+  git clone https://github.com/arcticicestudio/nord-tmux.git ~/.tmux/themes/nord.tmux
+  echo "run-shell \"~/.tmux/themes/nord-tmux/nord.tmux\"" > ~/.tmux.conf
+  tmux source-file ~/.tmux.conf
+#+end_src
+** Another configuration from Zhihu
+https://zhuanlan.zhihu.com/p/58668651
 
-   Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
-   
-** Tmux
-
-*** Manual install
-    
-    yum install libevent ncurses libevent-devel ncurses-devel gcc make bison pkg-config automake -y
-    
-    git clone https://github.com/tmux/tmux.git
-    
-    cd tmux && sh autogen.sh
-    
-    ./configure &&  make && make install
-    
-*** Node-tmux theme
-    
-    REF: https://www.nordtheme.com/docs/ports/tmux/installation
-    
-    yum install tmux -y
-    
-    mkdir -p ~/.tmux/themes/
-    
-    git clone https://github.com/arcticicestudio/nord-tmux.git ~/.tmux/themes/nord.tmux
-    
-    echo "run-shell \"~/.tmux/themes/nord-tmux/nord.tmux\"" > ~/.tmux.conf
-    
-    tmux source-file ~/.tmux.conf
-    
-*** Another configuration from Zhihu
-    
-    https://zhuanlan.zhihu.com/p/58668651
-    
-    curl -fsSL "https://raw.githubusercontent.com/peterzililuo/tmuxconfig/master/install.sh" | /bin/sh
-
-* Submodules
-
-** vim
-   
-   git submodule add https://github.com/tomasr/molokai.git vim/bundle/molokai
-   
-   git submodule add https://github.com/kien/ctrlp.vim.git vim/bundle/ctrlp
-   
-   git submodule add https://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
-   
-   git submodule add https://github.com/majutsushi/tagbar.git vim/bundle/tagbar
-   
-   git submodule add https://github.com/vim-airline/vim-airline.git vim/bundle/vim-airline
-   
-   git submodule add https://github.com/nathanalderson/yang.vim.git vim/bundle/vim-yang
-   
-   git submodule add https://github.com/tpope/vim-pathogen.git vim/vim-pathogen
-   
-** zsh
-   
-   git submodule add https://github.com/zsh-users/zsh-syntax-highlighting zsh/zsh-syntax-highlighting
-   
-   git submodule add https://github.com/zsh-users/zsh-autosuggestions zsh/zsh-autosuggestions
-   
-   git submodule add https://github.com/wting/autojump.git zsh/autojump
-
-* Refrence
-
-  [[https://github.com/danielcnorris/centaur-emacs][Centaur Emacs]]
-
-  [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
-
-* Gdb dashboard
+curl -fsSL "https://raw.githubusercontent.com/peterzililuo/tmuxconfig/master/install.sh" | /bin/sh
+* Gdb
+** Gdb dashboard
 https://github.com/cyrus-and/gdb-dashboard
 
 https://github.com/cyrus-and/gdb-dashboard/wiki/Support-older-GDB-versions
 
-GDB dashboard requires at least GDB 7.7 compiled with Python 2.7 in order to work properly.
+#+begin_src sh
+  GDB dashboard requires at least GDB 7.7 compiled with Python 2.7 in order to work properly.
+  If it is really impossible to use an up-to-date version, the following script will patch the dashboard and add the missing pieces (some features may suffer from this):
 
-If it is really impossible to use an up-to-date version, the following script will patch the dashboard and add the missing pieces (some features may suffer from this):
-
-mkdir -p ~/.gdbinit.d/
-wget 'https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=blob_plain;f=gdb/python/lib/gdb/FrameDecorator.py;hb=4bd8fc3a1362970d9800a263987af8093798338b' -O ~/.gdbinit.d/FrameDecorator.py
-sed -i '1s/^/python gdb.COMPLETE_EXPRESSION = gdb.COMPLETE_SYMBOL\n/' .gdbinit
-sed -i "s/gdb_breakpoint.temporary/None/g" .gdbinit
-cat >>~/.gdbinit <<EOF
-python
-import imp
-gdb.FrameDecorator = imp.new_module('FrameDecorator')
-gdb.FrameDecorator.FrameDecorator = FrameDecorator
-end
-EOF
+  mkdir -p ~/.gdbinit.d/
+  wget 'https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=blob_plain;f=gdb/python/lib/gdb/FrameDecorator.py;hb=4bd8fc3a1362970d9800a263987af8093798338b' -O ~/.gdbinit.d/FrameDecorator.py
+  sed -i '1s/^/python gdb.COMPLETE_EXPRESSION = gdb.COMPLETE_SYMBOL\n/' .gdbinit
+  sed -i "s/gdb_breakpoint.temporary/None/g" .gdbinit
+  cat >>~/.gdbinit <<EOF
+  python
+  import imp
+  gdb.FrameDecorator = imp.new_module('FrameDecorator')
+  gdb.FrameDecorator.FrameDecorator = FrameDecorator
+  end
+  EOF
+#+end_src
