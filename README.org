@@ -10,6 +10,11 @@ which can be get from [[https://github.com/microsoft/cascadia-code/releases][her
 *WenQuanYi Micro Hei* is for Chinese font and can be get from [[https://chinesefonts.org/fonts/wenquanyi-micro-hei-regular][here]].
 
 When working under Linux system, *JetBrains Mono* will be the default font.
+* Shortcuts
+| Name             | Keybinding | Description                                |
+|------------------+------------+--------------------------------------------|
+| er/expand-region | C-=        | Increase selected region by semantic units |
+| org-insert-link  | C-c C-l    | Insert a link                              |
 * Notes
 
 ** Emacs doom-modeline
