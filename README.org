@@ -1,6 +1,9 @@
 #+STARTUP: showall
 # Jide
 
+* Tips
+In Emacs 29+, set the user-emacs-directory with the flag --init-directory.
+
 * Notes
 
 ** Emacs doom-modeline
