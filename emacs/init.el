@@ -24,7 +24,7 @@
  '(org-hide-leading-stars t)
  '(org-startup-indented nil)
  '(package-selected-packages
-   '(toc-org expand-region which-key auto-complete org-bullets counsel imenu-list nyan-mode)))
+   '(ivy-rich toc-org expand-region which-key auto-complete org-bullets counsel imenu-list nyan-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

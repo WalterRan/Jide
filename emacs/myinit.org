@@ -68,7 +68,8 @@
 #+begin_src emacs-lisp
   (use-package counsel
     :ensure t)
-
+  (use-package ivy-rich
+    :hook ((ivy-mode . ivy-rich-mode)))
   (use-package swiper
     :ensure t
     :config
