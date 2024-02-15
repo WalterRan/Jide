@@ -1,4 +1,10 @@
 #+STARTUP: show2levels
+* Content :toc:
+- [[#view][VIEW]]
+- [[#font][Font]]
+- [[#swiper][Swiper]]
+- [[#org-mode][Org-mode]]
+- [[#temporary][Temporary]]
 
 * VIEW
 #+begin_src emacs-lisp
@@ -81,6 +87,13 @@
     :ensure t
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (custom-set-variables
+   '(org-export-html-postample nil)
+   '(org-hide-leading-stars t)
+   '(org-startup-indented nil))
+  (add-hook 'org-mode-hook 'org-indent-mode)
+  (use-package toc-org
+    :hook (org-mode .toc-org-mode))
 #+end_src
 * Temporary
 #+begin_src emacs-lisp
