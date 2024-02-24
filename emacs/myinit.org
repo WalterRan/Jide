@@ -86,10 +86,10 @@
   #+end_src
 * Org-mode
 #+begin_src emacs-lisp
-  (use-package org-bullets
-    :ensure t
-    :config
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (use-package org-superstar
+    :hook (org-mode . org-superstar-mode)
+    :init (setq org-superstar-headline-bullets-list '("✤""✤""✤""✤""✤""✤""✤""-")
+                org-superstar-item-bullet-alist '((?+ . ?∙))))
   (custom-set-variables
    '(org-export-html-postample nil)
    '(org-hide-leading-stars t)
