@@ -12,10 +12,11 @@ which can be get from [[https://github.com/microsoft/cascadia-code/releases][her
 
 When working under Linux system, *JetBrains Mono* will be the default font.
 ** Shortcuts
-| Name             | Keybinding | Description                                |
-|------------------+------------+--------------------------------------------|
-| er/expand-region | C-=        | Increase selected region by semantic units |
-| org-insert-link  | C-c C-l    | Insert a link                              |
+| Name                          | Keybinding | Description                                                 |
+|-------------------------------+------------+-------------------------------------------------------------|
+| er/expand-region              | C-=        | Increase selected region by semantic units                  |
+| org-insert-link               | C-c C-l    | Insert a link                                               |
+| org-insert-structure-template | C-c C-,    | Insert a block structure of the type #+begin_foo/#+end_foo. |
 ** Emacs doom-modeline
 This package requires the fonts included with all-the-icons to be installed.
 Run M-x all-the-icons-install-fonts to do so. 
