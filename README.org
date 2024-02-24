@@ -17,6 +17,28 @@ When working under Linux system, *JetBrains Mono* will be the default font.
 | er/expand-region              | C-=        | Increase selected region by semantic units                  |
 | org-insert-link               | C-c C-l    | Insert a link                                               |
 | org-insert-structure-template | C-c C-,    | Insert a block structure of the type #+begin_foo/#+end_foo. |
+** Export to html with *readtheorg* format
++ Create directory *readtheorg* in org repo
++ Download these files from [[https://github.com/fniessen/org-html-themes][org-html-themes]]
+  #+begin_example
+  src/lib/js/bootstrap.min.js
+  src/lib/js/jquery.min.js
+  src/lib/js/jquery.stickytableheaders.min.js
+  src/readtheorg_theme/css/htmlize.css
+  src/readtheorg_theme/css/readtheorg.css
+  src/readtheorg_theme/js/readtheorg.js
+  #+end_example
++ Add these to the org file that want to export
+  #+begin_example
+  #+OPTIONS: num:nil \n:t
+  #+OPTIONS: html-style:nil
+  #+HTML_HEAD: <link rel="stylesheet" type="text/css" href=".\readtheorg\htmlize.css"/>
+  #+HTML_HEAD: <link rel="stylesheet" type="text/css" href=".\readtheorg\readtheorg.css"/>
+  #+HTML_HEAD: <script type="text/javascript" src=".\readtheorg\jquery.min.js"></script>
+  #+HTML_HEAD: <script type="text/javascript" src=".\readtheorg\bootstrap.min.js"></script>
+  #+HTML_HEAD: <script type="text/javascript" src=".\readtheorg\jquery.stickytableheaders.min.js"></script>
+  #+HTML_HEAD: <script type="text/javascript" src=".\readtheorg\readtheorg.js"></script>
+  #+end_example
 ** Emacs doom-modeline
 This package requires the fonts included with all-the-icons to be installed.
 Run M-x all-the-icons-install-fonts to do so. 
