@@ -46,7 +46,7 @@
     (when (find-font (font-spec :name "Cascadia Code"))
       (set-face-attribute 'default nil
 			  :family "Cascadia Code"
-			  :height 110)))
+			  :height 95)))
    ((eq system-type 'gnu/linux)
     (when (find-font (font-spec :name "Jetbrains Mono"))
       (set-face-attribute 'default nil
