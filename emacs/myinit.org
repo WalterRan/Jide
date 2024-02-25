@@ -97,6 +97,8 @@
   (add-hook 'org-mode-hook 'org-indent-mode)
   (use-package toc-org
     :hook (org-mode .toc-org-mode))
+  (setq org-use-fast-todo-selection t)
+  (setq org-todo-keywords '((sequence "TODO(t)" "DONE(d)")))
 #+end_src
 * Temporary
 #+begin_src emacs-lisp
