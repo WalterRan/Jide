@@ -12,15 +12,16 @@ which can be get from [[https://github.com/microsoft/cascadia-code/releases][her
 
 When working under Linux system, *JetBrains Mono* will be the default font.
 ** Shortcuts
-| Name                          | Keybinding | Description                                                    |
-|-------------------------------+------------+----------------------------------------------------------------|
-| er/expand-region              | C-=        | Increase selected region by semantic units                     |
-| org-insert-link               | C-c C-l    | Insert a link                                                  |
-| org-insert-structure-template | C-c C-,    | Insert a block structure of the type #+begin_foo/#+end_foo.    |
-| org-metaup                    | M-<up>     | Move subtree up or move table row up.                          |
-| org-metadown                  | M-<down>   | Move subtree down or move table row down.                      |
-| org-metaleft                  | M-<left>   | Promote heading, list item at point or move table column left. |
-| org-metaright                 | M-<right>  | Demote heading, list item at point or move table column right. |
+| Name                          | Keybinding | Description                                                            |
+|-------------------------------+------------+------------------------------------------------------------------------|
+| er/expand-region              | C-=        | Increase selected region by semantic units                             |
+| org-insert-link               | C-c C-l    | Insert a link                                                          |
+| org-insert-structure-template | C-c C-,    | Insert a block structure of the type #+begin_foo/#+end_foo.            |
+| org-metadown                  | M-<down>   | Move subtree down or move table row down.                              |
+| org-metaleft                  | M-<left>   | Promote heading, list item at point or move table column left.         |
+| org-metaright                 | M-<right>  | Demote heading, list item at point or move table column right.         |
+| org-metaup                    | M-<up>     | Move subtree up or move table row up.                                  |
+| recenter-top-bottom           | C-l        | Scroll the window so that current line is in the middle of the window. |
 ** Export to html with *readtheorg* format
 + Create directory *readtheorg* in org repo
 + Download these files from [[https://github.com/fniessen/org-html-themes][org-html-themes]]
