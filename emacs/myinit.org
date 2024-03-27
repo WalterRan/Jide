@@ -86,6 +86,7 @@
   #+end_src
 * Org-mode
 #+begin_src emacs-lisp
+  (setq org-modules-loaded t)
   (use-package org-superstar
     :hook (org-mode . org-superstar-mode)
     :init (setq org-superstar-headline-bullets-list '("✤""✤""✤""✤""✤""✤""✤""-")
