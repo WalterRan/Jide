@@ -71,6 +71,16 @@ Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
   git submodule add https://github.com/wting/autojump.git zsh/autojump
 #+end_src
 * Tmux
+** Additional Configurations
+Write these config into ~/.tmux.conf to
+#+begin_quote
+set -g display-panes-time 5000
+
+bind -n M-Left select-pan -L
+bind -n M-Right select-pan -R
+bind -n M-Up select-pan -U
+bind -n M-Down select-pan -D
+#+end_quote
 ** Manual install
 #+begin_src sh
   yum install libevent ncurses libevent-devel ncurses-devel gcc make bison pkg-config automake -y
