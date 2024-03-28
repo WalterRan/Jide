@@ -34,7 +34,7 @@ set matchtime=5 " Tenths of a second to show the matching paren
 set nowrap " 设置不自动折行
 set nowrapscan " 设置不循环查找
 set ambiwidth=double "设置为双字宽显示，否则无法完整显示如:☆
-
+set colorcolumn=80
 " -------- theme --------
 " set background=dark
 set t_Co=256
