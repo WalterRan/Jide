@@ -86,6 +86,28 @@ bind -n M-Down select-pan -D
 ** Tmux Plugin Manager
 TPM (Tmux Plugin Manager)是tmux的插件管理工具
 https://github.com/tmux-plugins/tpm
+** work_work
+This is a regular layout configuration, I call it work_work
+#+begin_src shell
+  PWD=`pwd`
+  SESSION_NAME=`basename $PWD | sed 's/\./\_/g'`
+  tmux has-session -t=$SESSION_NAME 2>/dev/null
+
+  if [ $? != 0 ]; then
+      tmux -2 new-session -s $SESSION_NAME \; \
+           send-keys '<command>' C-m \; \
+           split-window -v -p 90\; \
+           send-keys '$ZSH_VERSION && zsh' C-m \; \
+           send-keys '<command>' C-m \; \
+           split-window -v \; \
+           split-window -h \; \
+           send-keys '<command>' C-m \; \
+           split-window -v\; \
+           select-pane -t 1
+  else
+      tmux -2 a -t $SESSION_NAME
+  fi
+#+end_src
 ** Manual install
 #+begin_src sh
   yum install libevent ncurses libevent-devel ncurses-devel gcc make bison pkg-config automake -y
