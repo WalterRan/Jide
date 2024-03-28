@@ -83,6 +83,9 @@ bind -n M-Right select-pan -R
 bind -n M-Up select-pan -U
 bind -n M-Down select-pan -D
 #+end_quote
+** Tmux Plugin Manager
+TPM (Tmux Plugin Manager)是tmux的插件管理工具
+https://github.com/tmux-plugins/tpm
 ** Manual install
 #+begin_src sh
   yum install libevent ncurses libevent-devel ncurses-devel gcc make bison pkg-config automake -y
