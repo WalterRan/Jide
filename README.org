@@ -75,14 +75,14 @@ Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
 * Tmux
 ** Additional Configurations
 Write these config into ~/.tmux.conf to
-#+begin_quote
+#+begin_example
 set -g display-panes-time 5000
 
 bind -n M-Left select-pan -L
 bind -n M-Right select-pan -R
 bind -n M-Up select-pan -U
 bind -n M-Down select-pan -D
-#+end_quote
+#+end_example
 ** Tmux Plugin Manager
 TPM (Tmux Plugin Manager)是tmux的插件管理工具
 https://github.com/tmux-plugins/tpm
