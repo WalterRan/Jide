@@ -1,6 +1,18 @@
 #+STARTUP: showall
 #+OPTIONS: \n:t
 
+* Key mapping
+Remap Caps-Lock key to Ctrl.
+** CentOS
+setxkbmap -option ctrl:nocaps
+** Windows
++ Go to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
++ Create new entry with type Binary value named: Scancode Map
++ Fill these into it
+| 00,00,00,00, | 00,00,00,00, |
+| 02,00,00,00, | 1d,00,3a,00, |
+| 00,00,00,00  |              |
++ Restart computer
 * Emacs
 ** Tips
 In Emacs 29+, set the user-emacs-directory with the flag --init-directory.
