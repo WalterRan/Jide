@@ -124,9 +124,7 @@
     (global-hungry-delete-mode))
 #+end_src
 #+begin_src emacs-lisp
-  ;; 设置默认读入文件编码
   (prefer-coding-system 'utf-8)
-  ;; 设置写入文件编码
   (setq default-buffer-file-coding-system 'utf-8)
   ;; Remove the link of validate when exporting org
   (setq org-html-validation-link nil)
