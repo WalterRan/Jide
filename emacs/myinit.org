@@ -100,6 +100,7 @@
     :hook (org-mode .toc-org-mode))
   (setq org-use-fast-todo-selection t)
   (setq org-todo-keywords '((sequence "TODO(t)" "DONE(d)")))
+  (setq org-export-with-sub-superscripts nil)
   (global-visual-line-mode)
 #+end_src
 * Temporary
