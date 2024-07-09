@@ -69,12 +69,6 @@ Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
 + [[https://github.com/emacs-lsp/lsp-treemacs][lsp-treemacs]]
 * VIM
 * ZSH
-** Submodules
-#+begin_src sh
-  git submodule add https://github.com/zsh-users/zsh-syntax-highlighting zsh/zsh-syntax-highlighting
-  git submodule add https://github.com/zsh-users/zsh-autosuggestions zsh/zsh-autosuggestions
-  git submodule add https://github.com/wting/autojump.git zsh/autojump
-#+end_src
 * Tmux
 ** Additional Configurations
 Write these config into ~/.tmux.conf to
