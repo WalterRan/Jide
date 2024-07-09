@@ -1,5 +1,35 @@
 #!/bin/sh
 
+# Exit the script if an error happens
+set -e
+PWD=$(pwd)
+
+run_with_error_check() {
+    if ! $@; then
+        echo "Error executing command: $@"
+        exit 1
+    fi
+}
+
+check_software_installed() {
+    local software_name=$1
+    if ! command -v "$software_name" >/dev/null 2>&1; then
+        echo "Error: $software_name is not installed."
+        exit 1
+    fi
+}
+
+function safe_delete() {
+    item="$1"
+    if [ -L "$item" ]; then
+        echo "Removing symbolic link: $item"
+        rm -f "$item" || handle_error
+    else
+        echo "Deleting file/directory: $item"
+        rm -rf "$item" || handle_error
+    fi
+}
+
 install_emacs() {
     echo "Install emacs"
 
@@ -39,27 +69,33 @@ install_emacs() {
 }
 
 install_vim() {
-    echo "Install vim"
-    current_path=$(pwd)
+    check_software_installed vim
 
-    yum install vim -y
+    if [ -n "$(find ~ -maxdepth 1 -name '.vim*' -print -quit)" ]; then
+        find ~/.vim* -print
+        read -p "Are you sure you want to delete these files and directories? (y/N) " confirm
+        if [ "$confirm" = "y" ]; then
+            # For each match, check if it is a symbolic link and handle appropriately
+            for item in ~/.vim*; do
+                safe_delete "$item"
+            done
+            echo "All matches of ~/.vim* have been deleted."
+        else
+            echo "Canceling deletion operation."
+            exit 1
+        fi
+    fi
+    echo "Starting to install..."
 
-    git submodule init
-    git submodule update
-
-    rm -rf ~/.vim*
+    run_with_error_check git submodule init vim/bundle/Vundle.vim
+    run_with_error_check git submodule update vim/bundle/Vundle.vim
 
     mkdir -p ~/.vim
-    mkdir -p ~/.vim/autoload
+    cp -r "$PWD"/vim/bundle ~/.vim/bundle
+    cp "$PWD"/vim/vimrc ~/.vimrc
+    vim +PluginInstall +qall || echo "Fail to install vim plugins, try run 'vim +PluginInstall +qall' manually."
 
-    # Replace 'ln -sf' by 'cp -ri'
-    cp -ri `pwd`/vim/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
-    cp -ri `pwd`/vim/bundle ~/.vim/bundle
-    cp -ri `pwd`/vim/after ~/.vim/after
-    cp -ri `pwd`/vim/plugin ~/.vim/plugin
-    cp -ri `pwd`/vim/vimrc ~/.vimrc
-
-    cd $current_path
+    cd "$PWD"
 }
 
 install_zsh() {
