@@ -83,7 +83,8 @@
     (global-set-key (kbd "C-x C-b") 'counsel-switch-buffer))
   (use-package amx
     :init (setq amx-history-length 20))
-  #+end_src
+  (setq recentf-max-saved-items 50)
+#+end_src
 * Org-mode
 #+begin_src emacs-lisp
   (setq org-modules-loaded t)
