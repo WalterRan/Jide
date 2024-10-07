@@ -61,7 +61,7 @@ When working under Linux system, *JetBrains Mono* will be the default font.
   #+end_example
 ** Emacs doom-modeline
 This package requires the fonts included with all-the-icons to be installed.
-Run M-x all-the-icons-install-fonts to do so. 
+Run M-x all-the-icons-install-fonts to do so.
 ** Emacs starting daemon with systemd
 Copy emacs/emacs.service to /usr/lib/systemd/system/emacs.service
 ** Refrence
@@ -147,3 +147,24 @@ https://github.com/cyrus-and/gdb-dashboard/wiki/Support-older-GDB-versions
   end
   EOF
 #+end_src
+* Git
+** Check trailing whitespaces when committing
+Save this script as .git/hooks/pre-commit
+#+begin_src bash
+  #!/bin/bash
+
+  # Get `Git commit` file list
+  git diff --cached --name-only --diff-filter=ACM | while read file; do
+      if [ -f "$file" ]; then
+          has_trailing_whitespace=$(grep -n -E '[[:space:]]+$' "$file")
+
+          # Exit and print line if there's trailing whitespace
+          if [ -n "$has_trailing_whitespace" ]; then
+              echo "Warning: $file has lines with trailing whitespace."
+              echo $has_trailing_whitespace
+              exit 1
+          fi
+      fi
+  done
+#+end_src
+Ps. Although there are some defects, it can be used for the time being without any major issues. I tried to add it to the project using the '-f' option in 'git add' but it didn't succeed. However, manually adding it to the project seems to be fine as well. And it has only been tested in Git Bash on Windows.
