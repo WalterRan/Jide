@@ -156,13 +156,17 @@ Save this script as .git/hooks/pre-commit
   # Get `Git commit` file list
   git diff --cached --name-only --diff-filter=ACM | while read file; do
       if [ -f "$file" ]; then
-          has_trailing_whitespace=$(grep -n -E '[[:space:]]+$' "$file")
-
-          # Exit and print line if there's trailing whitespace
-          if [ -n "$has_trailing_whitespace" ]; then
-              echo "Warning: $file has lines with trailing whitespace."
-              echo $has_trailing_whitespace
-              exit 1
+          file_type=$(file -b "$file")
+          if echo "$file_type" | grep -q "text"; then
+              has_trailing_whitespace=$(grep -n -E '[[:space:]]+$' "$file")
+              # Exit and print line if there's trailing whitespace
+              if [ -n "$has_trailing_whitespace" ]; then
+                  echo "Warning: $file has lines with trailing whitespace."
+                  echo $has_trailing_whitespace
+                  exit 1
+              fi
+          else
+              continue
           fi
       fi
   done
