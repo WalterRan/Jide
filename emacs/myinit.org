@@ -43,9 +43,9 @@
   ;; Set default font
   (cond
    ((eq system-type 'windows-nt)
-    (when (find-font (font-spec :name "Cascadia Code"))
+    (when (find-font (font-spec :name "Maple Mono NF CN"))
       (set-face-attribute 'default nil
-			  :family "Cascadia Code"
+			  :family "Maple Mono NF CN"
 			  :height 95)))
    ((eq system-type 'gnu/linux)
     (when (find-font (font-spec :name "Jetbrains Mono"))
@@ -56,8 +56,8 @@
   (when (find-font (font-spec :name "Segoe UI Symbol"))
     (set-fontset-font t 'unicode "Segoe UI Symbol" nil 'prepend))
   ;; Specify font for Chinese characters
-  (when (find-font (font-spec :name "WenQuanYi Micro Hei"))
-    (set-fontset-font t '(#x4e00 . #x9fff) "WenQuanYi Micro Hei"))
+  (when (find-font (font-spec :name "Maple Mono NF CN"))
+    (set-fontset-font t '(#x4e00 . #x9fff) "Maple Mono NF CN"))
   (set-face-attribute 'font-lock-comment-face nil
 		      :slant 'italic)
   (set-face-attribute 'font-lock-comment-face nil
@@ -91,7 +91,7 @@
   (use-package org-superstar
     :hook (org-mode . org-superstar-mode)
     :init (setq org-superstar-headline-bullets-list '("✤""✤""✤""✤""✤""✤""✤""-")
-                org-superstar-item-bullet-alist '((?+ . ?∙))))
+                org-superstar-item-bullet-alist '((?+ . ?·))))
   (custom-set-variables
    '(org-export-html-postample nil)
    '(org-hide-leading-stars t)
