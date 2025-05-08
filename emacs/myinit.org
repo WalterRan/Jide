@@ -103,6 +103,11 @@
   (setq org-todo-keywords '((sequence "TODO(t)" "DONE(d)")))
   (setq org-export-with-sub-superscripts nil)
   (global-visual-line-mode)
+  (custom-set-faces
+   '(org-level-1 ((t (:background "#8DF0FD" :inherit outline-1))))
+   '(org-level-2 ((t (:background "#A5FB70" :inherit outline-2))))
+   '(org-level-3 ((t (:background "#FFED00" :inherit outline-3))))
+   '(org-level-4 ((t (:background "#ffe6e6" :inherit outline-4)))))
 #+end_src
 * Temporary
 #+begin_src emacs-lisp
